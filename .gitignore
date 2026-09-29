@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment - never commit real credentials.
+# .env.example is the tracked template and is re-included below.
+.env
+.env.*
+!.env.example
+
+# Test and coverage output
+coverage/
+.eslintcache
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Editor and OS noise
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local database and OS artefacts
+*.mdf
+*.ldf
+*.bak
+*.sql.bak

@@ -1,0 +1,17 @@
+# Normalise line endings in the repository; check out per-platform.
+# Without this, Windows and Linux clones produce noisy whole-file diffs.
+* text=auto eol=lf
+
+# Native Windows scripts must keep CRLF to run at all.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Never touch binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

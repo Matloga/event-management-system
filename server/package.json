@@ -1,0 +1,40 @@
+{
+  "name": "event-management-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REST API for the Event Management System (Express + SQL Server)",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:schema": "node scripts/run-sql.js sql/001_schema.sql",
+    "db:procedures": "node scripts/run-sql.js sql/002_procedures.sql",
+    "db:categories": "node scripts/run-sql.js sql/003_seed_categories.sql",
+    "db:reset": "node scripts/run-sql.js sql/001_schema.sql sql/002_procedures.sql sql/003_seed_categories.sql",
+    "db:verify": "node scripts/check-db.js",
+    "seed": "node scripts/seed.js",
+    "test": "node --import ./tests/setup.js --test tests/**/*.test.js",
+    "test:unit": "node --import ./tests/setup.js --test tests/unit/*.test.js",
+    "test:integration": "node --import ./tests/setup.js --test tests/integration/*.test.js",
+    "reminders": "node scripts/send-reminders.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.12.1",
+    "mssql": "^12.7.2",
+    "nodemailer": "^10.0.12",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.5"
+  }
+}
